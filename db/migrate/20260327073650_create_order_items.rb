@@ -1,0 +1,11 @@
+class CreateOrderItems < ActiveRecord::Migration[7.1]
+  def change
+    create_table :order_items do |t|
+      t.references :order, foreign_key: true
+      t.string :product_name
+      t.integer :quantity
+      t.decimal :price
+      t.timestamps
+    end
+  end
+end
